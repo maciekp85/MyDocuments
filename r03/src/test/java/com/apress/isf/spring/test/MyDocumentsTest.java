@@ -1,40 +1,43 @@
-package spring.test;
+package com.apress.isf.spring.test;
 
 import com.apress.isf.java.model.Document;
 import com.apress.isf.java.model.Type;
 import com.apress.isf.java.service.SearchEngine;
+import com.apress.isf.spring.service.SearchEngineService;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by nishi on 2016-03-29.
  */
-public class MyDocumentsWithSpringTest {
+public class MyDocumentsTest {
 
     private ClassPathXmlApplicationContext context;
     private SearchEngine engine;
-    private Type documentType;
+    private Type webType;
 
     @Before
     public void setUp() {
         context = new ClassPathXmlApplicationContext("META-INF/spring/mydocuments-context.xml");
-        engine = context.getBean(SearchEngine.class);
-        documentType = context.getBean(Type.class);
+        engine = context.getBean(SearchEngineService.class);
+        webType = context.getBean("webType", Type.class);
     }
 
     @Test
     public void testWithSpringFindByType() {
-        List<Document> documents = engine.findByType(documentType);
+        List<Document> documents = engine.findByType(webType);
         assertNotNull(documents);
         assertTrue(documents.size() == 1);
-        assertEquals(documentType.getName(), documents.get(0).getType().getName());
-        assertEquals(documentType.getDesc(), documents.get(0).getType().getDesc());
-        assertEquals(documentType.getExtension(), documents.get(0).getType().getExtension());
+        assertEquals(webType.getName(), documents.get(0).getType().getName());
+        assertEquals(webType.getDesc(), documents.get(0).getType().getDesc());
+        assertEquals(webType.getExtension(), documents.get(0).getType().getExtension());
     }
 
     @Test
