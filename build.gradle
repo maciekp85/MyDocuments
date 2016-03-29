@@ -6,6 +6,8 @@ allprojects {
     apply plugin: 'idea'
     apply plugin: 'application'
 
+    mainClassName = System.getProperty("mainClass")
+
     group 'com.apress.isf'
     version '1.0-SNAPSHOT'
 
