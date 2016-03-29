@@ -1,3 +1,2 @@
-rootProject.name = 'MyDocuments'
 include 'r01'
-
+include 'r02'

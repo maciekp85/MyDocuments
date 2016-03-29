@@ -18,7 +18,7 @@ allprojects {
     }
 
     dependencies {
-        compile 'org.codehaus.groovy:groovy-all:2.3.0'
+        compile 'org.codehaus.groovy:groovy-all:2.4.5'
         compile 'com.thoughtworks.xstream:xstream:1.4.7'
         compile 'org.aspectj:aspectjrt:1.7.4'
         compile 'org.springframework:spring-context:4.0.5.RELEASE'
@@ -41,9 +41,9 @@ allprojects {
             events 'started', 'passed'
         }
 
-        onOutput { descriptor, event ->
-            logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
-        }
+//        onOutput { descriptor, event ->
+//            logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+//        }
 
     }
 }
