@@ -53,3 +53,14 @@ allprojects {
 project(':r01'){
     mainClassName = System.getProperty("mainClass")
 }
+
+project(':r10'){
+    apply plugin: 'war'
+    apply plugin: 'jetty'
+
+
+    dependencies {
+        compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
+        runtime 'jstl:jstl:1.2'
+    }
+}
