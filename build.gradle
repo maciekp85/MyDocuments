@@ -64,3 +64,17 @@ project(':r10'){
         runtime 'jstl:jstl:1.2'
     }
 }
+
+project(':r11'){
+    apply plugin: 'war'
+    apply plugin: 'jetty'
+
+    dependencies {
+        compile 'org.springframework:spring-jms:4.0.5.RELEASE'
+        compile 'org.springframework.amqp:spring-rabbit:1.3.3.RELEASE'
+        compile 'javax.jms:jms-api:1.1-rev-1'
+        compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
+        runtime 'jstl:jstl:1.2'
+        runtime 'org.apache.activemq:activemq-core:5.7.0'
+    }
+}
