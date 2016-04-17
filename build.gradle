@@ -93,3 +93,10 @@ project(':r12'){
         runtime 'org.apache.activemq:activemq-core:5.7.0'
     }
 }
+
+project(':r13'){
+
+    dependencies {
+        runtime 'javax.mail:mail:1.4'
+    }
+}
