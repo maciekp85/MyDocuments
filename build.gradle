@@ -78,3 +78,18 @@ project(':r11'){
         runtime 'org.apache.activemq:activemq-core:5.7.0'
     }
 }
+
+project(':r12'){
+
+    apply plugin: 'jetty'
+    apply plugin: 'war'
+
+    dependencies {
+        compile 'org.springframework:spring-jms:4.0.5.RELEASE'
+        compile 'org.springframework.amqp:spring-rabbit:1.3.3.RELEASE'
+        compile 'javax.jms:jms-api:1.1-rev-1'
+
+        runtime 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+        runtime 'org.apache.activemq:activemq-core:5.7.0'
+    }
+}
