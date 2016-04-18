@@ -100,3 +100,12 @@ project(':r13'){
         runtime 'javax.mail:mail:1.4'
     }
 }
+
+project(':r14'){
+
+    dependencies {
+        runtime 'javax.mail:mail:1.4'
+        runtime 'org.jruby:jruby-complete:1.7.11'
+        runtime 'org.beanshell:bsh:2.0b5'
+    }
+}
