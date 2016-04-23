@@ -125,3 +125,14 @@ project(':r16'){
         //compile 'org.springframework.data:spring-data-redis:1.2.0.RELEASE	'
     }
 }
+
+project(':r17'){
+    dependencies {
+        compile 'org.springframework.amqp:spring-rabbit:1.3.3.RELEASE'
+        compile 'org.springframework.data:spring-data-mongodb:1.4.2.RELEASE'
+        compile 'org.springframework:spring-oxm:4.0.5.RELEASE'
+        compile 'org.springframework.social:spring-social-twitter:1.0.5.RELEASE'
+
+        //compile 'org.springframework.data:spring-data-redis:1.2.0.RELEASE	'
+    }
+}
